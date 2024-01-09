@@ -40,14 +40,3 @@ app.listen(4005, () => {
 });
 
 
-
-
-//   if(it is not 1am){
-//   axios.post("http://2932.34.4.324.5:4006/events", event).catch((err) => {
-//     console.log(err.message);
-//   });
-
-//   axios.post("http://l234..234.23..2:4007/events", event).catch((err) => {
-//     console.log(err.message);
-//   });
-// }
