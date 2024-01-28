@@ -9,6 +9,7 @@ import "./styles.css";
 const PostList = () => {    
   const [posts, setPosts] = useState({});
 
+
   const fetchPosts = async () => {
     const res = await axios.get("http://posts.com/posts");
 
@@ -24,7 +25,7 @@ const PostList = () => {
     return (
       <div className="card" key={post.id}>
         <div className="card-body">
-          <h3>{post.title}</h3>
+          <h3>Post Name: {post.title}</h3>
           <CommentList comments={post.comments} />
           <CommentCreate postId={post.id} />
         </div>

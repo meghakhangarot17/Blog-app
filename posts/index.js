@@ -10,9 +10,11 @@ app.use(cors());
 
 const posts = {};   //store every posts that we create
 
+
 app.get("/posts", (req, res) => {
   res.send(posts);
 });
+
 
 app.post("/posts/create", async (req, res) => {
   const id = randomBytes(4).toString("hex");
@@ -33,6 +35,8 @@ app.post("/posts/create", async (req, res) => {
   });
 
   res.status(201).send(posts[id]);
+
+  // res.status(201).send({ id, title }); // Return both id and title
 });
 
 app.post("/events", (req, res) => {
@@ -42,7 +46,6 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4000, () => {
-  // console.log('v10000');
   console.log("Listening on 4000");
 });
 

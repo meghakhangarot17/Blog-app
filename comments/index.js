@@ -4,6 +4,7 @@ const { randomBytes } = require("crypto");
 const cors = require("cors");
 const axios = require("axios");
 
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -23,6 +24,10 @@ app.post("/posts/:id/comments", async (req, res) => {
   comments.push({ id: commentId, content, status: "pending" });     //create a comment
 
   commentsByPostId[req.params.id] = comments;         //array of comments
+
+
+
+
 
   await axios.post("http://event-bus-srv:4005/events", {           //comment created event
     type: "CommentCreated",
@@ -68,6 +73,4 @@ app.post("/events", async (req, res) => {
 app.listen(4001, () => {
   console.log("Listening on 4001");
 });
-
-
 

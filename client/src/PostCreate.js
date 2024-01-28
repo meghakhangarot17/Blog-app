@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css"; 
 
+
 const PostCreate = () => {
   const [title, setTitle] = useState("");
 
